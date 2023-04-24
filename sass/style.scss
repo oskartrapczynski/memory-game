@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin center($postion) {
+  position: $postion;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.page {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+.buttons {
+  @include center(absolute);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button--reset {
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+  transform: scale(0.5);
+}
+
+.score {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &--active {
+    display: block;
+  }
+}
+
+.gameStat {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+
+  &--active {
+    display: block;
+  }
+}
+
+.button {
+  display: none;
+  font-size: 50px;
+  width: 400px;
+  padding: 20px 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 5px solid #1f1e3b;
+  color: #1f1e3b;
+  background-color: transparent;
+
+  &--active {
+    display: block;
+  }
+
+  &--input {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    text-align: center;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &--score,
+  &--save,
+  &--input {
+    margin-top: 10px;
+  }
+
+  &:hover {
+    background-color: #1f1e3b;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+.board {
+  @include center(absolute);
+  display: none;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  height: 20vh;
+  width: 15vh;
+  background-color: #1f1e3b;
+  border-radius: 25px;
+  transform: rotate3d(0, 0, 0, 0deg);
+  transition: transform 0.5s;
+
+  &--active {
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
+
+  &__image {
+    @include center(absolute);
+    padding: 15px;
+    filter: grayscale(0.3);
+    transition: width 0.2s, grayscale 0.2s;
+    display: none;
+
+    &--logo {
+      width: 85%;
+    }
+
+    &--animal {
+      width: 75%;
+    }
+
+    &--active {
+      display: block;
+    }
+
+    &:hover {
+      width: 100%;
+      filter: grayscale(0);
+    }
+  }
+}

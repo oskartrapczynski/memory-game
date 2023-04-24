@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="page">
+        <div class="buttons">
+
+            <button class="button button--init button--active">start</button>
+            <input class="button button--input button--active" type="number" value="3" min="2" max="4">
+            <button class="button button--score button--active">wyniki</button>
+            <button class="button button--save button--active">Zapisz</button>
+        </div>
+        <section class="board" data-size="3"></section>
+        <button class="button button--reset">reset</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="./FileSaver.js"></script>
+    <script src="./card.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
