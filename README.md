@@ -1,7 +1,7 @@
 # memory-game
 Simple memory game in JavaScript
 
-Demo
+## Demo
 https://oskartrapczynski.github.io/memory-game/
 
 About project:
